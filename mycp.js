@@ -1,21 +1,21 @@
 // 1/
 const fs = require('fs');
 const path = require('path');
-//
+
 var arg1 = process.argv.slice(2)
 var arg2 = process.argv.slice(3)
-//
-// function copyFile (source, target) {
-//   const readStream = fs.createReadStream(source)
-//   const writeStream = fs.createWriteStream(target)
-//
-//   readStream.pipe(writeStream)
-// }
-//
-// const filename1 = arg1[0]
-// const filename2 = arg2[0]
-//
-// copyFile(filename1, filename2)
+
+function copyFile (source, target) {
+  const readStream = fs.createReadStream(source)
+  const writeStream = fs.createWriteStream(target)
+
+  readStream.pipe(writeStream)
+}
+
+const filename1 = arg1[0]
+const filename2 = arg2[0]
+
+copyFile(filename1, filename2)
 
 // 2/
 var arg1 = process.argv.slice(2)
