@@ -38,11 +38,11 @@ console.log(myCat2(fileName2))
 // 3/
 var args3 = process.argv.slice(3)
 
-function parseArgs(args3) {
-  return args3.join('').replace(/\-/g, '') // aRp
+function parseArgs(args) {
+  return args.join('').replace(/\-/g, '')
 }
 
-function addDollarSign(filename, options = { dollarSign: false}) {
+function addDollarSign(filename, options = { dollarSign: false }) {
   // Check -e option is enabled, if true add $ to every line break
   if (!options.dollarSign) {
     var allLines = fs.readFileSync(filename).toString().split('\n');
@@ -56,7 +56,7 @@ function addDollarSign(filename, options = { dollarSign: false}) {
 function myCat3(args) {
   const options = parseArgs(args3)
 
-  const files = addDollarSign(args3[0], {
+  const file = addDollarSign(args3[0], {
     dollarSign: options.includes('e'),
   })
 }
