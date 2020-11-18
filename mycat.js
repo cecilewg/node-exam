@@ -2,8 +2,6 @@ const fs = require('fs');
 const readline = require('readline');
 
 // 1/
-var args = process.argv.slice(1)
-
 function myCat(filename) {
   var rl = readline.createInterface({
     input: process.stdin,
