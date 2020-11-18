@@ -2,38 +2,38 @@ const fs = require('fs');
 const readline = require('readline');
 
 // 1/
-// var args = process.argv.slice(1)
-//
-// function myCat(filename) {
-//   var rl = readline.createInterface({
-//     input: process.stdin,
-//     output: process.stdout,
-//     terminal: false
-//   });
-//
-//   rl.on('line', function(line) {
-//       console.log(line);
-//   })
-// }
+var args = process.argv.slice(1)
 
-// const fileName1 = args[0]
-// console.log(myCat(fileName1))
-//
+function myCat(filename) {
+  var rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    terminal: false
+  });
+
+  rl.on('line', function(line) {
+      console.log(line);
+  })
+}
+
+const fileName1 = args[0]
+console.log(myCat(fileName1))
+
 // // 2/
-// var args2 = process.argv.slice(2)
-//
-// function myCat2 (filename) {
-//   try {
-//     const data = fs.readFile(filename, 'utf8', (error,data) => {
-//       console.log(data)
-//     })
-//   } catch (err) {
-//     console.error(err)
-//   }
-// }
-//
-// const fileName2 = args2[0]
-// console.log(myCat2(fileName2))
+var args2 = process.argv.slice(2)
+
+function myCat2 (filename) {
+  try {
+    const data = fs.readFile(filename, 'utf8', (error,data) => {
+      console.log(data)
+    })
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+const fileName2 = args2[0]
+console.log(myCat2(fileName2))
 
 // 3/
 var args3 = process.argv.slice(3)
@@ -49,7 +49,6 @@ function addDollarSign(filename, options = { dollarSign: false}) {
     allLines.forEach(function (line) {
       var newLine = line + "$";
       console.log(newLine);
-      fs.appendFileSync(filename, newLine.toString() + "\n");
     });
   }
 }
